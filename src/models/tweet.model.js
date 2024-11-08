@@ -4,14 +4,16 @@ const tweetSchema = new Schema(
   {
     content: {
       type: String,
-      required: true,
+      required: [true, "content is required"],
     },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 export const Tweet = mongoose.model("Tweet", tweetSchema);
