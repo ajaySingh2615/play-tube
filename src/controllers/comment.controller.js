@@ -156,7 +156,7 @@ const updateComment = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, updatedComment, "Comment edited successfully"));
 });
 
-// delete a comment
+// delete a comment (only owner can delete)
 const deleteComment = asyncHandler(async (req, res) => {
   const { commentId } = req.params;
 
